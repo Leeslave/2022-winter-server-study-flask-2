@@ -26,8 +26,8 @@ class UserManagement(Resource):
                 return {"nickname" : sql['nickname']}, 200
                 
 
-    def post(self):
-        # POST method 구현 부분
+    def put(self):
+        # PUT method 구현 부분
         database = Database()
         data = request.get_json()
         sql = database.execute_one(f"SELECT * FROM user WHERE id = '{data['id']}';")
@@ -49,8 +49,8 @@ class UserManagement(Resource):
                 database.close()
                 return {"is_success" : True, "message" : "유저 닉네임 변경 성공"}, 200
 
-    def put(self):
-        # PUT method 구현 부분
+    def POST(self):
+        # POST method 구현 부분
         database = Database()
         data = request.get_json()
         sql = database.execute_one(f"SELECT * FROM user WHERE id = '{data['id']}';")

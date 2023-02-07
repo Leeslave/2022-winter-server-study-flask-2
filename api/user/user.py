@@ -49,7 +49,7 @@ class UserManagement(Resource):
                 database.close()
                 return {"is_success" : True, "message" : "유저 닉네임 변경 성공"}, 200
 
-    def POST(self):
+    def post(self):
         # POST method 구현 부분
         database = Database()
         data = request.get_json()
